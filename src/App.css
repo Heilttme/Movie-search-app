@@ -1,38 +1,144 @@
-.App {
+body, html *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Nunito;
+}
+
+body{
+  background-color: #1a1a1a;
+}
+
+.container {
+  background-color: #242323;
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 80%;
+  margin: 2rem auto;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.form {
+  margin-top: 1rem;
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: 4fr 1fr;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container input[type=text]{
+  padding: .6rem 1rem;
+  border-radius: 16px;
+  outline: none;
+  border: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.container button{
+  padding: .7em 1em;
+  border-radius: 8px;
+  border: none;
+  background-color:  #e68a00;
+  cursor: pointer;
   color: white;
+  transition: all .1s ease-in-out;
 }
 
-.App-link {
-  color: #61dafb;
+.container button:hover{
+  background-color:  #ffa31a;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.container button:active{
+  transform: translate(0px, .8px);
+}
+
+.error{
+  margin-top: 1.4rem;
+}
+
+.cards{
+  text-align: left;
+}
+
+.cards .card:first-child{
+  margin-top: 2rem;
+}
+
+.cards .card{
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #8c8c8c;
+  margin-top: 1rem;
+}
+
+.cards .card:last-child{
+  border-bottom: none;
+}
+
+.cards .card strong{
+  font-size: 1.6em;
+  margin-right: 1rem;
+}
+
+.cards .card span{
+  color: #a6a6a6;
+}
+
+.content{
+  margin-top: 1rem;
+  display: flex;
+}
+
+.cards .content p{
+  padding: .4em 1.5em;
+  font-size: 1.2em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+@media (max-width: 750px) {
+  .container{
+    width: 95%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .content img{
+    width: 150px;
+    max-height: 200px;
+  }
+
+  .card .content p{
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 450px) {
+  .content{
+    display: block;
+  }
+
+  .content .image-container{
+    width: 90%;
+    margin: 1rem auto;
+  }
+}
+
+@media (max-width: 360px) {
+  .card span{
+    display: block;
+  }
+
+  .form {
+    grid-gap: .4rem;
+    grid-template-columns: auto;
+  }
+}
+
+@media (min-width: 1600px) {
+  .container {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container{
+    width: 70%;
   }
 }
